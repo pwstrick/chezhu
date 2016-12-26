@@ -1,0 +1,629 @@
+@import "../../../h5che/src/libs/ui/sass/base/normalize",
+"../../../h5che/src/libs/ui/sass/base/grid",
+"../../../h5che/src/libs/ui/sass/base/typeface",
+"../../../h5che/src/libs/ui/sass/base/icon",
+"../../../h5che/src/libs/ui/sass/component/loading",
+"../../../h5che/src/libs/ui/sass/component/button",
+"./dialog",
+"./pay";
+.bc-red {
+  background: #fe5466;
+}
+.bc-white {
+  background: #fff;
+}
+.ui-loading-wrap {
+  top: 45%;
+  left: 50%;
+  .ui-loading {
+    margin-right: 10px;
+  }
+  position: absolute;
+  z-index: 999;
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -50px;
+  padding: 50px 0;
+  background: rgba(0,0,0,.8);
+  color: #FFF;
+  border-radius: 10px;
+  //display: none;
+}
+
+/* 动画
+   ========================================================================== */
+@keyframes moveUp {
+   from {
+     transform: translate3d(0, 10px, 0);
+   }
+   to {
+     transform: translate3d(0, 0, 0);
+   }
+ }
+@keyframes moveLeft {
+  from {
+    transform: translate3d(10px, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 图片
+   ========================================================================== */
+.img-index-title {
+  width: 65%;
+  margin-top: 20px;
+  animation: moveUp 1s infinite alternate;
+}
+.img-index-pic {
+  width: 65%;
+  margin-bottom: 20px;
+  animation: moveLeft 1s infinite alternate;
+}
+@media screen and (min-width: 750px){
+  .img-index-title {
+    width: 75%;
+  }
+  .img-index-pic {
+    width: 75%;
+  }
+}
+.img-select-title {
+  width: 85%;
+  height: 70px;
+}
+.img-mobile-title {
+  width: 510px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.img-share-icon {
+  width: 80px;
+  height: 80px;
+}
+.img-share-title {
+  width: 520px;
+  height: 40px;
+  display: block;
+  margin: 10px auto 30px;
+}
+
+/* 工具
+   ========================================================================== */
+.mt20 {
+  margin-top: 20px;
+}
+.tc {
+  text-align: center;
+}
+.dn {
+  display: none;
+}
+/* 按钮
+   ========================================================================== */
+$btn-black: #2c2d2d;
+.btn {
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  //选中状态
+  &.hover {
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+  }
+}
+%btn-border {
+  border: 4px solid $btn-black;
+}
+.btn-border {
+  @extend %btn-border;
+}
+@mixin btn($bc, $width, $height, $width-after:0, $height-after:0) {
+  width: $width;
+  height: $height;
+  background: $bc;
+  color: $btn-black;
+  @if $width-after > 0 {
+    &::after {
+      content: "";
+      background: url(../img/btn-sm.png) no-repeat;
+      width: $width-after;
+      height: $height-after;
+      background-size:100% 100%;
+      position: absolute;
+      left: 10px;
+      top: 5px;
+    }
+  }
+
+}
+.btn-sm {
+  border-radius: 25px;
+  box-shadow: 0 6px 0 $btn-black;
+  border: 0;
+  @include btn(#fcd0d7, 220px, 50px, 30px, 20px);
+  &.active {
+    background: #ff455d;
+    color: #FFF;
+    @extend %btn-border;
+  }
+}
+.btn-xs {
+  width: 180px;
+}
+.btn-lg {
+  border-radius: 45px;
+  box-shadow: 0 12px 0 $btn-black;
+  @include btn(#ffe7a4, 680px, 90px, 60px, 40px);
+  font-size: 46px;/*px*/
+  font-weight: bold;
+  &.active {
+    background: #ff455d;
+    color: #FFF;
+  }
+
+}
+.btn-mid {
+  border-radius: 40px;
+  box-shadow: 0 10px 0 $btn-black;
+  @include btn(#fdcd00, 560px, 80px, 60px, 40px);
+  font-size: 42px;/*px*/
+  font-weight: bold;
+}
+.btn-angle {
+  @include btn(#ffe7a4, 260px, 110px);
+  font-size: 34px;/*px*/
+  font-weight: bold;
+}
+.btn-white {
+  @include btn(#fff, 260px, 60px);
+  border-radius: 40px;
+  box-shadow: 0 10px 0 $btn-black;
+}
+
+/* 输入框
+   ========================================================================== */
+%input {
+  width: 600px;
+  height: 80px;
+  box-sizing: border-box;
+  border: 6px solid $btn-black;
+
+  border-radius: 20px;
+  font-size: 28px;/*px*/
+  line-height: 2;
+  background: #FFF;
+}
+.input {
+  @extend %input;
+  padding: 25px 40px;
+}
+input::-webkit-input-placeholder {
+  color: $btn-black;
+}
+.input-exist {
+  @extend %input;
+  margin: 20px auto 0;
+  strong{
+    font-size: 34px;/*px*/
+    margin-right: 10px;
+  }
+  a {
+    font-size: 24px;/*px*/
+    color: #5f5f5f;
+    text-decoration: underline;
+  }
+}
+
+/* 业务
+   ========================================================================== */
+.container {
+  padding: 40px 0 70px;
+  text-align: center;
+}
+//优惠券选项
+.border-container {
+  width: 650px;
+  box-sizing: border-box;
+  padding: 50px 15px;
+  border: 8px solid $btn-black;
+  margin: 60px auto 80px;
+  border-radius: 20px;
+  background: #ff0138;
+  position: relative;
+  .company-coupon {
+    margin-bottom: 15px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    li {
+      width: 295px;
+      height: 300px;
+      box-sizing: border-box;
+      background: #FFF;
+      border: 4px solid $btn-black;
+      border-radius: 20px;
+      padding: 30px 15px 0;
+      position: relative;
+      margin-right: 18px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      //h4 {
+      //  font-size: 28px;/*px*/
+      //}
+      //overflow: hidden;
+      //选中
+      &.selected {
+        &::after {
+          border-radius: 20px;
+          position: absolute;
+          content: "";
+          width: inherit;
+          height: inherit;
+          background: rgba(0,0,0,.8);
+          left: -2px;
+          top: 0;
+          //bottom: 0;
+          //right: 0;
+          pointer-events: none;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 150px;
+          height: 150px;
+          background: url(../img/selected.png) no-repeat;
+          background-size: 100% 100%;
+          z-index: 1;
+          left: 50%;
+          top: 50%;
+          margin-left: -75px;
+          margin-top: -75px;
+          pointer-events: none;
+        }
+      }
+    }
+    .coupon-bac {
+      width: 100%;
+      height: 150px;
+      background: url(../img/coupon-bac.png) no-repeat;
+      background-size: 100% 100%;
+      margin-bottom: 30px;
+      padding: 30px;
+      h4 {
+        width: 80px;
+      }
+    }
+  }
+  .selected-coupon {
+    li {
+      background: url(../img/coupon-bac2.png) no-repeat;
+      width: 100%;
+      background-size: 100% 100%;
+      height: 170px;
+      box-sizing: border-box;
+      padding: 20px;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        display: block;
+        margin-right: 10px;
+      }
+      .txt {
+        width: 270px;
+        text-align: left;
+        min-height: 120px;
+        h4 {
+          font-size: 30px;/*px*/
+        }
+      }
+      .price {
+        padding-top: 35px;
+        h1 {
+          font-weight: bold;
+          font-size: 46px;/*px*/
+        }
+        h4 {
+          font-weight: bold;
+        }
+        width: 200px;
+      }
+    }
+  }
+}
+//车轮自营业务中的框
+.border-container-second {
+  &::after {
+    position: absolute;
+    content: "";
+    background: url(../img/select-border-header.png) no-repeat;
+    width: 715px;
+    height: 160px;
+    left: -40px;
+    top: -40px;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../img/select-border-footer.png) no-repeat;
+    width: 715px;
+    height: 190px;
+    left: -40px;
+    bottom: -50px;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+}
+//选择福利中的框
+.border-container-third {
+  margin-bottom: 100px;
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../img/select-border-footer2.png) no-repeat;
+    width: inherit;
+    height: 55px;
+    left: -10px;
+    bottom: -50px;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+}
+.border-container-fourth {
+  margin-top: 200px;
+  box-shadow: 0 15px 0 #dd003a;
+  margin-bottom: 12px;
+}
+.img-select-border-title {
+  position: absolute;
+  width: 430px;
+  left: 50%;
+  margin-left: -215px;
+  top: -40px;
+}
+.img-select-border-title2 {
+  margin-left: -180px;
+}
+.img-select-border-title3 {
+  top: -200px;
+}
+.img-small-coupon {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+//合作伙伴
+.partner {
+  width: 700px;
+  border: 8px solid $btn-black;
+  border-radius: 20px;
+  margin: 0 auto 40px;
+  box-sizing: border-box;
+  padding: 20px 15px 10px;
+  //overflow: hidden;
+  position: relative;
+  .partner-inline {
+    overflow: hidden;
+    //width: 400%;
+  }
+  &::after {
+    content: "";
+    background: url(../img/cooperate.png) no-repeat;
+    position: absolute;
+    width: 390px;
+    height: 40px;
+    left: 50%;
+    top: -30px;
+    margin-left: -195px;
+    background-size: 100% 100%;
+  }
+  ul {
+    float: left;
+    //width: 200%;
+    overflow: hidden;
+    height: 120px;
+    img {
+      width: inherit;
+      height: 90px;
+      display: block;
+    }
+    text-align: center;
+    p {
+      font-size: 22px;/*px*/
+    }
+    li {
+      float: left;
+      display: block;
+      margin-right: 22px;
+      width: 90px;
+      //float: left;
+      //&:last-of-type{
+      //  margin-right: 0;
+      //}
+    }
+  }
+}
+
+.partner-container {
+  width: 700px;
+  border: 4px solid $btn-black;
+  margin: 0 auto 120px;
+  padding: 20px 15px;
+  border-radius: 20px;
+  background: #ff0239;
+  box-shadow: 0 15px 0 #dd003a;
+  .company-coupon {
+    li {
+      width: 210px;
+      height: 280px;
+      padding: 15px 15px 0;
+      //优惠券已领完
+      &.disabled {
+        position: relative;
+        &::after {
+          border-radius: 20px;
+          position: absolute;
+          content: "";
+          width: inherit;
+          height: inherit;
+          background: rgba(0,0,0,.8);
+          left: -2px;
+          top: 0;
+          //bottom: 0;
+          //right: 0;
+          //pointer-events: none;
+        }
+        &::before {
+          content: "已抢完";
+          position: absolute;
+          color: #FFF;
+          z-index: 1;
+          font-size: 34px;/*px*/
+          width: 200px;
+          left: 50%;
+          top: 50%;
+          margin-left: -100px;
+          margin-top: -17px;
+        }
+      }
+    }
+    .coupon-bac {
+      height: 140px;
+      padding: 15px;
+      h4 {
+        width: 60px;
+        font-size: 24px;/*px*/
+      }
+    }
+    .btn-sm {
+      width: 170px;
+    }
+  }
+  .img-small-coupon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+//输入框
+.input-container {
+  padding-bottom: 200px;
+  .txt {
+    width: 500px;
+    margin: 50px auto 0;
+    h6 {
+      line-height: 1.5;
+      text-align: left;
+      position: relative;
+      &::after {
+        position:absolute;
+        content: "";
+        //font-family: "iconfont";
+        width: 10px;/*px*/
+        height: 10px;/*px*/
+        border-radius: 100%;
+        background: $btn-black;
+        left: -20px;
+        top: 50%;
+        margin-top: -5px;/*px*/
+      }
+    }
+  }
+}
+//支付
+.pay-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  h5 {
+    border-top: 4px solid $btn-black;
+    background: #eeeeee;
+    height: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 15px;
+    strong {
+      font-size: 46px;/*px*/
+      color:#ff0139;
+    }
+  }
+  .btn-angle {
+    border-bottom: 0;
+  }
+}
+
+//结果页的
+.result-coupon {
+  li {
+    border: 4px solid $btn-black;
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: 190px;
+    padding: 20px 10px;
+    background: #FFF;
+    .coupon {
+      background: url(../img/coupon-bac3.png) no-repeat;
+      background-size: 100% 100%;
+      padding: 40px 10px 20px;
+    }
+    img {
+      width: 90px;
+      height: 90px;
+    }
+    .price {
+      margin-top: 40px;
+      text-align: center;
+      strong {
+        //font-weight: bold;
+        font-size: 40px;/*px*/
+      }
+    }
+  }
+}
+.result-mobile {
+  width: 580px;
+  border-left: 4px solid $btn-black;
+  border-right: 4px solid $btn-black;
+  background: #fcd0d7;
+  padding: 50px 0 40px;
+  margin: 0 auto;
+  text-align: center;
+  h4 {
+    margin-bottom: 15px;
+  }
+}
+.result-share {
+  width: 630px;
+  padding: 10px 0 30px;
+  border: 4px solid $btn-black;
+  border-radius: 15px;
+  margin: 0 auto 100px;
+}
+.btn-footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+  background: #fe5466;
+  z-index: 10;
+}

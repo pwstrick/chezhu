@@ -1,0 +1,60 @@
+#pay {
+  background-color:rgba(0,0,0,.5);
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 999;
+  .pay-info {
+    position: absolute;
+    background-color: rgba(255,255,255,0.9);
+    bottom: 0;
+    width: 100%;
+    color: #404040;
+    text-align: center;
+  }
+  .pay-num {
+    margin: 0 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #cecece; /*no*/
+    p:nth-child(1) {
+      line-height: 30px;
+      font-size: 24px;
+      color: #878787;
+    }
+    p:nth-child(2) {
+      line-height: 60px;
+      font-size: 52px;
+    }
+  }
+  .pay-type {
+    position: relative;
+    height: 220px;
+    font-size: 0;
+    ol {
+      padding-top: 30px;
+    }
+    .pay-item {
+      display: inline-block;
+      padding: 0 50px;
+    }
+    img {
+      display: block;
+      width: 125px;
+      height: 125px;
+    }
+    p {
+      margin-top: 10px;
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
+  .pay-action {
+    height: 100px;
+    line-height: 100px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #cecece; /*no*/
+    font-size: 36px;
+  }
+}

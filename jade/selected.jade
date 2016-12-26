@@ -1,0 +1,73 @@
+extends layout
+block main
+    body.bc-red
+    script(id="template", type="x-template-mustache").
+        {{#data}}
+        <li class="ui-flex ui-flex-row-between">
+            <div class="ui-flex"><img src="{{img_str}}">
+                <div class="txt ui-flex ui-flex-column ui-flex-row-between">
+                    <h4>{{name}}</h4>
+                    <div>
+                        <h6>{{servicePro}}</h6>
+                        <p>有效期:{{validDate}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="price ui-flex ui-flex-column-baseline ui-flex-row-center">
+                <h1>{{originPrice}}</h1>
+                <h4>元</h4>
+            </div>
+        </li>
+        {{/data}}
+    .container
+        .border-container.border-container-third
+            img(src="img/blank.gif", data-src="img/select-border-title2.png").img-select-border-title.img-select-border-title2
+            ul(id="selectedCoupon").selected-coupon
+                //li.ui-flex.ui-flex-row-between
+                //    div.ui-flex
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        div.txt.ui-flex.ui-flex-column.ui-flex-row-between
+                //            h4 违章代缴折扣券
+                //            div
+                //                h6 由车轮互联提供
+                //                p 有效期:2017-12-31
+                //    div.price.ui-flex.ui-flex-column-baseline
+                //        h1 150
+                //        h4 元
+                //li.ui-flex.ui-flex-row-between
+                //    div.ui-flex
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        div.txt.ui-flex.ui-flex-column.ui-flex-row-between
+                //            h4 违章代缴折扣券
+                //            div
+                //                h6 由车轮互联提供
+                //                p 有效期:2017-12-31
+                //    div.price.ui-flex.ui-flex-column-baseline
+                //        h1 150
+                //        h4 元
+                //li.ui-flex.ui-flex-row-between
+                //    div.ui-flex
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        div.txt.ui-flex.ui-flex-column.ui-flex-row-between
+                //            h4 违章代缴折扣券
+                //            div
+                //                h6 由车轮互联提供
+                //                p 有效期:2017-12-31
+                //    div.price.ui-flex.ui-flex-column-baseline
+                //        h1 150
+                //        h4 元
+        .input-container
+            input(type="tel", placeholder="请填写手机号即可", id="txtMobile").input.dn
+            div(id="existMobile").dn
+                h6 以上代金券将发往以下账户
+                .input-exist
+                    strong
+                    a(href="javascript:;", id="editMobile") 修改
+            div.txt
+                h6 如果您不满意当前的礼品，可以返回重新选择
+                h6 支付成功后奖品不退不换
+    footer.pay-container.ui-flex.ui-flex-column-end
+        h5(id="payMoney").ui-col-1 支付￥
+            strong
+            | 元即可获得以上福利
+        button(type="button", id="btnPay").btn.btn-border.btn-angle 支付

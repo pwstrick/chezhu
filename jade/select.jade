@@ -1,0 +1,134 @@
+extends layout
+block main
+    body.bc-red
+    script(id="template", type="x-template-mustache").
+        {{#data}}
+        {{#ul}}
+        <ul name="select" class="company-coupon ui-flex ui-flex-row-between">
+            {{#li}}
+            <li data-key="{{code}}">
+                <div class="coupon-bac ui-flex ui-flex-row-between ui-flex-column-center">
+                    <img src="{{img_str}}" class="img-small-coupon">
+                    <h4>{{anotherName}}</h4>
+                </div>
+                <button type="button" class="btn btn-border btn-sm">选择</button>
+            </li>
+            {{/li}}
+        </ul>
+        {{/ul}}
+        {{/data}}
+    .container
+        img(src="img/blank.gif", data-src="img/select-title.png").img-select-title
+        .border-container.border-container-second(id="secondContainer")
+            img(src="img/blank.gif", data-src="img/select-border-title.png").img-select-border-title
+            //ul.company-coupon.ui-flex.ui-flex-row-between(name="select")
+            //    li(data-key="buhuan123")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //    li(data-key="chetie123")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //ul.company-coupon.ui-flex.ui-flex-row-between(name="select")
+            //    li(data-key="order_coupon_4")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //    li(data-key="order_coupon_5")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+        .partner
+            div.partner-inline
+                div(id="partner")
+                    ul
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo1.png")
+                            p 车轮
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo2.png")
+                            p 途虎养车
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo3.png")
+                            p 凹凸租车
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo4.png")
+                            p 惠租车
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo5.png")
+                            p E代泊
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo6.png")
+                            p OK车险
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo7.png")
+                            p 爱代驾
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo8.png")
+                            p 天天拍车
+                        li
+                            img(src="img/blank.gif", data-src="img/icon/logo9.png")
+                            p 捷停
+        .partner-container.border-container(id="borderContainer")
+            //ul.company-coupon.ui-flex.ui-flex-row-between(name="select")
+            //    li(data-key="order_coupon_6")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm.btn-xs 选择
+            //    li(data-key="order_coupon_7")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //    li(data-key="order_coupon_8")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //ul.company-coupon.ui-flex.ui-flex-row-between(name="select")
+            //    li(data-key="order_coupon_9")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm.btn-xs 选择
+            //    li(data-key="order_coupon_10")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //    li(data-key="order_coupon_11")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm 选择
+            //ul.company-coupon.ui-flex.ui-flex-row-between(name="select")
+            //    li(data-key="order_coupon_12")
+            //        div.coupon-bac.ui-flex.ui-flex-row-between.ui-flex-column-center
+            //            img(src="img/blank.gif", data-src="img/icon/icon1.png").img-small-coupon
+            //            h4 油卡充值
+            //        button(type="button").btn.btn-border.btn-sm.btn-xs 选择
+        script(id="template2", type="x-template-mustache").
+            {{#data}}
+            {{#ul}}
+            <ul name="select" class="company-coupon ui-flex">
+                {{#li}}
+                    <li data-key="{{code}}" class="{{css}}">
+                        <div class="coupon-bac ui-flex ui-flex-row-between ui-flex-column-center">
+                        <img src="{{img_str}}" class="img-small-coupon">
+                        <h4>{{anotherName}}</h4>
+                        </div>
+                        <button type="button" class="btn btn-border btn-sm btn-xs">选择</button>
+                    </li>
+                {{/li}}
+            </ul>
+            {{/ul}}
+            {{/data}}
+        .btn-footer-container
+            button(type="button", id="btnSelect").btn.btn-border.btn-lg 挑3个呗
+

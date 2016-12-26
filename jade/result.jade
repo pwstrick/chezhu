@@ -1,0 +1,54 @@
+extends layout
+block main
+    body.bc-red
+    script(id="template", type="x-template-mustache").
+        {{#data}}
+        <li>
+            <div class="coupon">
+                <img src="{{img_str}}">
+                <h6>{{anotherName}}</h6>
+                <div class="price">
+                    <strong>{{originPrice}}</strong>
+                    <span>元</span>
+                </div>
+            </div>
+        </li>
+        {{/data}}
+    .container.bc-white
+        .border-container.border-container-fourth
+            img(src="img/blank.gif", data-src="img/select-border-title3.png").img-select-border-title.img-select-border-title3
+            ul(id="resultCoupon").result-coupon.ui-flex.ui-flex-row-between
+                //li
+                //    .coupon
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        h6 年检代办
+                //        div.price
+                //            strong 150
+                //            span 元
+                //li
+                //    .coupon
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        h6 年检代办
+                //        div.price
+                //            strong 150
+                //            span 元
+                //li
+                //    .coupon
+                //        img(src="img/blank.gif", data-src="img/icon/icon3.png")
+                //        h6 年检代办
+                //        div.price
+                //            strong 150
+                //            span 元
+        .result-mobile(id="resultMobile")
+            img(src="img/blank.gif", data-src="img/mobile-title.png").img-mobile-title
+            h4
+            button(type="button", data-href="autopaiwz://welfare/list/open").dn.btn.btn-border.btn-white 立即查看优惠券
+        .result-share(id="appShare").dn
+            img(src="img/blank.gif", data-src="img/share-icon.png").img-share-icon
+            img(src="img/blank.gif", data-src="img/share-title.png").img-share-title
+            button(type="button").btn.btn-border.btn-mid 马上告知好友
+        .result-share(id="otherShare").dn
+            img(src="img/blank.gif", data-src="img/share-icon2.png").img-share-icon
+            img(src="img/blank.gif", data-src="img/share-title2.png").img-share-title
+            button(type="button", data-href="http://chelun.com/url/4tHuhM").btn.btn-border.btn-mid 打开车轮查违章
+        p 本活动解释权归上海易点时空网络有限公司所有
